@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
+import {NavController} from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,9 @@ export class LoginPage implements OnInit {
   mode = 'Light';
   eye = 'eye';
 
-  constructor(private sanitizer: DomSanitizer, private iconRegistry: MatIconRegistry) {
+  constructor(private sanitizer: DomSanitizer,
+              private navCtrl: NavController,
+              private iconRegistry: MatIconRegistry) {
     iconRegistry.addSvgIcon(
         'forward',
         sanitizer.bypassSecurityTrustResourceUrl('assets/icon/arrow_forward_ios-24px.svg'));
@@ -48,5 +51,9 @@ export class LoginPage implements OnInit {
     } else {
       this.mode = 'Light';
     }
+  }
+
+  onHome() {
+    this.navCtrl.navigateRoot('home');
   }
 }
