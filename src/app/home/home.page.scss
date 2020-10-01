@@ -31,10 +31,21 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 50%;
 }
 
 .btn-forward {
-  background: #282b3a;
+  background: #233e7f;
   color: white;
+  margin-top: 5px;
+}
+
+.navigate {
+  margin-top: 10px;
+}
+
+.continue{
+  color: #233e7f;
+  margin-right: 5px;
+  font-weight: bold;
 }
